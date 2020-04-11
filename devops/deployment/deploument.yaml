@@ -21,18 +21,3 @@ spec:
         ports:
           - name: server-service
             containerPort: 8000
-
-#        // в какую папку всунуть примаунченый конфиг
-#        volumeMounts:
-#          - name: ui-server-config-volume
-#            mountPath: /etc/config/serviceconfig
-
-#      // бинтрей ключ для того шоб стянуть конффг
-#      imagePullSecrets:
-#        - name: bintray-pull-secret
-#
-#      // какой конфиг стфнуть
-#      volumes:
-#        - name: ui-server-config-volume
-#          secret:
-#            secretName: local-ui-server-config
