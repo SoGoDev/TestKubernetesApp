@@ -1,0 +1,38 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: server
+spec:
+  selector:
+    matchLabels:
+      app: server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: sogoinc/test_aplication_withkubernetes:master
+        imagePullPolicy: Always
+        ports:
+          - name: server-service
+            containerPort: 8000
+
+#        // в какую папку всунуть примаунченый конфиг
+#        volumeMounts:
+#          - name: ui-server-config-volume
+#            mountPath: /etc/config/serviceconfig
+
+#      // бинтрей ключ для того шоб стянуть конффг
+#      imagePullSecrets:
+#        - name: bintray-pull-secret
+#
+#      // какой конфиг стфнуть
+#      volumes:
+#        - name: ui-server-config-volume
+#          secret:
+#            secretName: local-ui-server-config
