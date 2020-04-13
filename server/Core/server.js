@@ -16,4 +16,4 @@ const config = {
 app.use("/api/", cats);
 app.use(express.static('static'));
 
-app.listen(config.port, () => console.log(`Server start on ${config.port} port`));
+app.listen(config.port, () => console.log(`Server start on port ${config.port}`));

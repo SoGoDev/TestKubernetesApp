@@ -29,7 +29,7 @@ export default class CatsList extends PureComponent {
   componentDidMount() {
     this.setState({ isLoading: true });
 
-    fetch(`http://${window.location.host}/api/cats/groups`, { mode: 'cors' })
+    fetch(`http://${window.location.host}/api/cats/groups`)
       .then(response => response.status === 200 ? response.json() : {})
       .then(list => this.setState({
         isLoading: false,
